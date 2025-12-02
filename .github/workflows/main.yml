@@ -1,11 +1,16 @@
 name: Black Duck Security Scan - Polaris
+#on:
+#  push:
+#    branches: [main, master, develop, stage, release]
+#  pull_request:
+#    branches: [main, master, develop, stage, release]
+#  workflow_dispatch:
+
 on:
-  push:
-    branches: [main, master, develop, stage, release]
-  pull_request:
-    branches: [main, master, develop, stage, release]
-  workflow_dispatch:
-  
+  schedule:
+    # Runs every day at 09:00 UTC
+    - cron: '30 15 * * *'
+
 jobs:
   build:
     runs-on: [ubuntu-latest]
