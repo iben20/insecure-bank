@@ -9,7 +9,7 @@ name: Black Duck Security Scan - Polaris
 on:
   schedule:
     # Runs every day at 09:00 UTC
-    - cron: '50 15 * * *'
+    - cron: '01 * * * *'
 
 jobs:
   build:
