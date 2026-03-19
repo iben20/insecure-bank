@@ -25,6 +25,7 @@ jobs:
         polaris_server_url: ${{ vars.POLARIS_SERVER_URL }}
         polaris_access_token: ${{ secrets.POLARISPOC_ACCESS_TOKEN }}
         polaris_assessment_types: "SCA,SAST"
+        polaris_test_sast_type: ${{ github.event_name != 'pull_request' && 'SAST-FULL' || 'SAST-RAPID' }} #if not a PR, then run SAST FULL scan
         #detect_args: "--detect.accuracy.required=NONE"
         #coverity_build_command: "./mvnw install -DskipTests"
         #coverity_clean_command: "./mvnw clean"
